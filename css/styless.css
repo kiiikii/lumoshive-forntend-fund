@@ -184,7 +184,7 @@ nav.scrolled .logo img {
 	letter-spacing: 0.25em;
 }
 
-.hero-content h5 {
+.hero-content h3 {
   animation: fadeInRight 2s 0.5s forwards;
 	color: #cccccc;
 }
