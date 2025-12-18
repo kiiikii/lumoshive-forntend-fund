@@ -38,6 +38,10 @@
     --shadow-lg: 0 8px 32px rgba(43, 45, 66, 0.2);
 }
 
+/* html & body */
+html {
+    scroll-behavior: smooth;
+}
 body{
   line-height: 1.6;
 }
@@ -51,6 +55,39 @@ nav{
     display: flex;
     position: fixed;
     z-index: 10;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: background-color, height, box-shadow;
+}
+
+/* Navigation after scroll */
+nav.scrolled {
+    background-color: rgba(255, 252, 242, 0.97); /* Sedikit transparan untuk efek glass */
+    box-shadow: var(--shadow-md);
+    height: 5rem;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Transisi smooth untuk elemen navbar */
+nav.scrolled .nav-links li a {
+    color: var(--dark);
+    transition: color 0.4s ease-out;
+}
+
+nav.scrolled .nav-links li a:hover {
+    color: var(--accent);
+    transition: color 0.3s ease;
+}
+
+nav.scrolled .hamburger div {
+    background-color: var(--dark);
+    transition: background-color 0.4s ease-out;
+}
+
+nav.scrolled .logo img {
+    transform: scale(0.9);
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 /*Styling logo*/
@@ -75,10 +112,12 @@ nav{
 }
 .nav-links li a{
     text-decoration: none;
+    font-family: var(--font-heading);
+    color: var(--light);
     margin: 0 0.7vw;
 }
 .nav-links li a:hover {
-    color: #61DAFB;
+    color: var(--accent);
 }
 .nav-links li {
     position: relative;
@@ -88,7 +127,7 @@ nav{
     display: block;
     height: 3px;
     width: 0%;
-    background-color: #61DAFB;
+    background-color: var(--accent);
     position: absolute;
     transition: all ease-in-out 250ms;
     margin: 0 0 0 10%;
@@ -151,8 +190,11 @@ nav{
 }
 
 hr {
-	margin-left: 25%;
-	margin-right: 25%;
+	margin: var(--space-md) auto;
+    width: 50%;
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
 }
 
 @keyframes fadeInLeft {
@@ -213,10 +255,12 @@ hr {
 }
 
 .about-section hr {
-	border: 0;
-	height: 1px;
-	background: #333;
-	background-image: linear-gradient(to right, #ccc, #333, #ccc);
+  border: 0;
+  height: 1px;
+  background: #333;
+  background-image: linear-gradient(to right, #ccc, #333, #ccc);
+  width: 50%;
+  margin: 2rem auto;
 }
 
 .about-section span {
