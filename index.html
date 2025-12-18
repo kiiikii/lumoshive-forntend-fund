@@ -3,66 +3,56 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Refky Setiawan | Frontend Developer</title>
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styless.css">
     <link href="https://fonts.googleapis.com/css2?family=Rochester&display=swap" rel="stylesheet">
-
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
 
   </head>
   <body>
-    <!-- Hero Section -->
-    <section class="Hero" id="id">
-      <!-- Header Section -->
-      <header class="navbar">
-        <nav class="container">
-          <a href="#" class="logo">Refky<span> Setiawan</span></a>
-        </nav>
-      </header>
+    <div class="page-wrapper">
+      <div class="hero-wrapper">
+        <header class="header">
+          <nav>
+            <div class="logo">
+                <img src="img/logo.png" alt="Logo Image">
+            </div>
+            <div class="hamburger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#introduction">Home</a></li>
+                <li><a href="#about">Solutions</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Testimonials</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+          </nav>
+        </header>
 
-      <h1>Hi, I'm Refky Setiawan</h1>
-      <p>I'm a student passionate about Frontend Development at Lumoshive Academy,<br> 
-      learning to create responsive and user-friendly web applications.</p>
+        <section id = "introduction" class="hero-section">
+          <div class = "hero-content">
+            <h1 class = "fadeInLeft">Hello, I'm Refky Setiawan</h1>
+            <hr>
+            <h5 class = "fadeInRight">frontend web developer</h5>
+          </div>
+        </section>
+      </div>
 
-    </section>
-
-    <!-- Main -->
-    <main>
-      <!-- Content goes here -->
-      <!-- About -->
-      <section class="about-me">
-
-      </section>
-
-      <!-- Portfolio -->
-      <section class="porto">
-
-      </section>
-
-      <!-- Why Hired Me -->
-      <section class="why">
-        
-      </section>
-
-      <!-- Testimonials -->
-      <section class="testimoni">
-        <!-- Testimonial content goes here -->
-        
-      </section>
-
-      <!-- Contact -->
-      <section class="contact">
-        <!-- Contact content goes here -->
-      </section>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-      <p>© 2025 Refky Setiawan. All rights reserved.</p>
-    </footer>
+      <main class="main-content">
+        <section id="about" class="about-section">
+		      <h1>Hi there</h1>
+          <p>
+            I am a 21 years old <span class = "web_Span">web developer</span> / <span>designer</span> 
+            based in Romania. I have a strong passion for anything
+            web related, mostly developing web applications, and in the near future, iOS applications and software .
+		      </p>
+        </section>
+      </main>
+    </div>
   </body>
+  <script src="js/script.js"></script>
 </html>

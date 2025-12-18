@@ -1,0 +1,308 @@
+/* Reset dan Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Warna Warm Palette */
+    --primary: #FF6B6B;
+    --secondary: #FFD166;
+    --accent: #06D6A0;
+    --light: #FFFCF2;
+    --dark: #2B2D42;
+    --gray: #8D99AE;
+    --gray-light: #EDF2F4;
+    
+    /* Font */
+    --font-heading: "Indie Flower", cursive;
+    --font-cursive: "Rochester", cursive;
+    --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    
+    /* Spacing */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 3rem;
+    --space-xl: 4rem;
+    
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(43, 45, 66, 0.1);
+    --shadow-md: 0 4px 16px rgba(43, 45, 66, 0.15);
+    --shadow-lg: 0 8px 32px rgba(43, 45, 66, 0.2);
+}
+
+body{
+  line-height: 1.6;
+}
+
+/* Navigation Styles */
+nav{
+    height: 6rem;
+    width: 100vw;
+    /* background-color: #131418;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2); */
+    display: flex;
+    position: fixed;
+    z-index: 10;
+}
+
+/*Styling logo*/
+.logo{
+    padding:1vh 1vw;
+    text-align: center;
+}
+.logo img {
+    height: 5rem;
+    width: 5rem;
+}
+
+/*Styling Links*/
+.nav-links{
+    display: flex;
+    list-style: none; 
+    width: 88vw;
+    padding: 0 0.7vw;
+    justify-content: space-evenly;
+    align-items: center;
+    text-transform: uppercase;
+}
+.nav-links li a{
+    text-decoration: none;
+    margin: 0 0.7vw;
+}
+.nav-links li a:hover {
+    color: #61DAFB;
+}
+.nav-links li {
+    position: relative;
+}
+.nav-links li a::before {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 0%;
+    background-color: #61DAFB;
+    position: absolute;
+    transition: all ease-in-out 250ms;
+    margin: 0 0 0 10%;
+}
+.nav-links li a:hover::before{
+    width: 80%;
+}
+
+/*Styling Hamburger Icon*/
+.hamburger div{
+    width: 30px;
+    height:3px;
+    background: #f2f5f7;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+.hamburger{
+    display: none;
+}
+
+/* Intro Section */
+.hero-wrapper {
+    background: linear-gradient(135deg, rgba(8, 7, 1, 0.9) 0%, rgba(255, 209, 102, 0.1) 100%), url("../img/37463603191013.jpg") no-repeat center center/cover;
+    width: auto;
+    height: 100vh;
+}
+.hero-section {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	/* position: relative; */
+	overflow: hidden;
+	color: var(--light);
+  font-family: var(--font-heading);
+	text-align: center;
+}
+
+.hero-content {
+	text-align: center;
+	position: absolute;
+	height: 110px;
+	margin: auto;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 999;
+}
+
+.hero-content h1 {
+	animation: fadeInLeft 2s 0.5s forwards;
+	font-size: 2.8em;
+	letter-spacing: 0.25em;
+}
+
+.hero-content h5 {
+  animation: fadeInRight 2s 0.5s forwards;
+	color: #cccccc;
+}
+
+hr {
+	margin-left: 25%;
+	margin-right: 25%;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Styling for main content */
+.main-content {
+  /* padding: var(--space-lg); */
+  font-family: var(--font-body);
+}
+
+/* about */
+.about-section {
+	padding: 100px 0 140px;
+	font-family: "Roboto Mono";
+	background-color: whitesmoke;
+	text-align: center;
+	overflow: hidden;
+}
+
+.about-section h1 {
+	font-size: 2em;
+	color: #7c8184;
+	text-transform: uppercase;
+	letter-spacing: 12px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.about-section p {
+	color: #666666;
+	margin: 0 auto;
+	font-size: 1.1em;
+	line-height: 2.5em;
+	letter-spacing: 0.2em;
+	padding-top: 35px;
+	padding-left: 30%;
+	padding-right: 30%;
+}
+
+.about-section hr {
+	border: 0;
+	height: 1px;
+	background: #333;
+	background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
+.about-section span {
+	font-size: 0.8em;
+}
+
+.about-section .web_Span {
+	text-decoration: underline;
+	font-size: 1.3em;
+}
+
+.about-section img {
+	width: 25%;
+	height: 180px;
+	vertical-align: middle;
+	border-radius: 2%;
+	margin-bottom: 40px;
+	border: 0;
+}
+
+/*Stying for small screens*/
+@media screen and (max-width: 800px){
+    nav{
+        position: fixed;
+        z-index: 3;
+    }
+    .hamburger{
+        display:block;
+        position: absolute;
+        cursor: pointer;
+        right: 5%;
+        top: 50%;
+        transform: translate(-5%, -50%);
+        z-index: 2;
+        transition: all 0.7s ease;
+    }
+    .nav-links{
+        position: fixed;
+        background: #131418;
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        clip-path: circle(50px at 90% -20%);
+        -webkit-clip-path: circle(50px at 90% -10%);
+        transition: all 1s ease-out;
+        pointer-events: none;
+    }
+    .nav-links.open{
+        clip-path: circle(1000px at 90% -10%);
+        -webkit-clip-path: circle(1000px at 90% -10%);
+        pointer-events: all;
+    }
+    .nav-links li{
+        opacity: 0;
+    }
+    .nav-links li:nth-child(1){
+        transition: all 0.5s ease 0.2s;
+    }
+    .nav-links li:nth-child(2){
+        transition: all 0.5s ease 0.4s;
+    }
+    .nav-links li:nth-child(3){
+        transition: all 0.5s ease 0.6s;
+    }
+    .nav-links li:nth-child(4){
+        transition: all 0.5s ease 0.7s;
+    }
+    .nav-links li:nth-child(5){
+        transition: all 0.5s ease 0.8s;
+    }
+    .nav-links li:nth-child(6){
+        transition: all 0.5s ease 0.9s;
+        margin: 0;
+    }
+    li.fade{
+        opacity: 1;
+    }
+}
+/*Animating Hamburger Icon on Click*/
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggle .line2{
+    transition: all 0.7s ease;
+    width:0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+}
