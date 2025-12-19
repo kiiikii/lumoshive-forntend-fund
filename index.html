@@ -1,426 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gino Stoian - Portfolio</title>
-    
-    <!-- Your Custom CSS (inline for simplicity; move to external file if preferred) -->
-    <style>
-        html, body {
-            height: 100%;
-            width: 100%;
-            margin: 0;
-            padding: 0;
-            font-family: "Roboto Mono";
-        }
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styless.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rochester&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
 
-        /* Navigation Styles */
-nav{
-    height: 6rem;
-    width: 100vw;
-    /* background-color: #131418;
-    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2); */
-    display: flex;
-    position: fixed;
-    z-index: 10;
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    will-change: background-color, height, box-shadow;
-}
-
-/* Navigation after scroll */
-nav.scrolled {
-    background-color: rgba(255, 252, 242, 0.97); /* Sedikit transparan untuk efek glass */
-    box-shadow: var(--shadow-md);
-    height: 5rem;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Transisi smooth untuk elemen navbar */
-nav.scrolled .nav-links li a {
-    color: var(--dark);
-    transition: color 0.4s ease-out;
-}
-
-nav.scrolled .nav-links li a:hover {
-    color: var(--accent);
-    transition: color 0.3s ease;
-}
-
-nav.scrolled .hamburger div {
-    background-color: var(--dark);
-    transition: background-color 0.4s ease-out;
-}
-
-nav.scrolled .logo img {
-    transform: scale(0.9);
-    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-/*Styling logo*/
-.logo{
-    padding:1vh 1vw;
-    text-align: center;
-}
-.logo img {
-    height: 5rem;
-    width: 5rem;
-}
-
-/*Styling Links*/
-.nav-links{
-    display: flex;
-    list-style: none; 
-    width: 88vw;
-    padding: 0 0.7vw;
-    justify-content: space-evenly;
-    align-items: center;
-    text-transform: uppercase;
-}
-.nav-links li a{
-    text-decoration: none;
-    font-family: var(--font-heading);
-    color: var(--light);
-    margin: 0 0.7vw;
-}
-.nav-links li a:hover {
-    color: var(--accent);
-}
-.nav-links li {
-    position: relative;
-}
-.nav-links li a::before {
-    content: "";
-    display: block;
-    height: 3px;
-    width: 0%;
-    background-color: var(--accent);
-    position: absolute;
-    transition: all ease-in-out 250ms;
-    margin: 0 0 0 10%;
-}
-.nav-links li a:hover::before{
-    width: 80%;
-}
-
-/*Styling Hamburger Icon*/
-.hamburger div{
-    width: 30px;
-    height:3px;
-    background: #f2f5f7;
-    margin: 5px;
-    transition: all 0.3s ease;
-}
-.hamburger{
-    display: none;
-}
-
-        /* Intro Section */
-        #introduction {
-            background: url("https://i.imgur.com/UsxPHHM.jpg") no-repeat center center scroll;
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            position: relative;
-            background-size: cover;
-            overflow: hidden;
-            color: white;
-            font-family: "Roboto Mono";
-            text-align: center;
-        }
-
-        .brand {
-            text-align: center;
-            position: absolute;
-            height: 110px;
-            margin: auto;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            z-index: 999;
-        }
-
-        .brand h1 {
-            animation: fadeInLeft 1.3s ease-out; /* Pure CSS animation */
-            font-size: 2.8em;
-            letter-spacing: .25em;
-        }
-
-        .brand h5 {
-            animation: fadeInRight 2s ease-out; /* Pure CSS animation */
-            color: #cccccc;
-        }
-
-        hr {
-            margin-left: 25%;
-            margin-right: 25%;
-        }
-
-        .chevron {
-            position: relative;
-            top: 95%;
-            animation: fadeInDown 2.8s ease-out; /* Pure CSS animation */
-        }
-
-        /* About Section */
-        #about {
-            padding: 100px 0 140px;
-            font-family: 'Roboto Mono';
-            background-color: whitesmoke;
-            text-align: center;
-            overflow: hidden;
-        }
-
-        #about h1 {
-            font-size: 2.0em;
-            color: #7c8184;
-            text-transform: uppercase;
-            letter-spacing: 12px;
-            margin-top: 30px;
-            margin-bottom: 30px;
-        }
-
-        #about p {
-            color: #666666;
-            margin: 0 auto;
-            font-size: 1.1em;
-            line-height: 2.5em;
-            letter-spacing: 0.2em;
-            padding-top: 35px;
-            padding-left: 30%;
-            padding-right: 30%;
-        }
-
-        #about hr {
-            border: 0;
-            height: 1px;
-            background: #333;
-            background-image: linear-gradient(to right, #ccc, #333, #ccc);
-        }
-
-        #about span {
-            font-size: 0.8em;
-        }
-
-        #about .web_Span {
-            text-decoration: underline;
-            font-size: 1.3em;
-        }
-
-        #about img {
-            width: 25%;
-            height: 180px;
-            vertical-align: middle;
-            border-radius: 2%;
-            margin-bottom: 40px;
-            border: 0;
-        }
-
-        /* Interests Section */
-        #interests {
-            padding-top: 70px;
-            padding-bottom: 150px;
-            background-color: white;
-            text-align: center;
-            border-color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        #interests h1 {
-            margin-bottom: 35px;
-            font-size: 2em;
-            color: grey;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-        }
-
-        #interests h3 {
-            color: #4c4c4c;
-            letter-spacing: 0.2em;
-            font-size: 1.4em;
-            padding-bottom: 10px;
-        }
-
-        #interests p {
-            color: #595959;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            letter-spacing: 1px;
-            font-size: 15px;
-            line-height: 25px;
-            padding-left: 25%;
-            padding-right: 25%;
-        }
-
-        #interests #plane {
-            font-size: 4em;
-        }
-
-        /* Custom icon class for SVGs */
-        .icon {
-            width: 4em; /* Matches original font-size */
-            height: 4em;
-            fill: #737373; /* Icon color */
-            padding-top: 25px;
-        }
-
-        /* Custom container (replaces Bootstrap .container) */
-        .interests-container {
-            max-width: 1200px; /* Standard container width */
-            margin: 0 auto;
-            padding: 0 15px; /* Padding for gutters */
-        }
-
-        /* Custom row (replaces Bootstrap .row) */
-        .interests-row {
-            display: flex;
-            flex-wrap: wrap;
-            margin: 0 -15px; /* Negative margin for gutters */
-        }
-
-        /* Custom column (replaces Bootstrap .col-md-6 and .column) */
-        .interest-column {
-            flex: 0 0 100%; /* Default: full width (stacks on mobile) */
-            max-width: 100%;
-            padding: 30px;
-            border-left: 1px solid black;
-            border-top: 1px solid black;
-            box-sizing: border-box; /* Include padding in width */
-            animation: fadeInLeft 1.3s ease-out; /* Default animation; overridden per column */
-        }
-
-        /* Specific animations for columns */
-        .interest-column:nth-child(2n) {
-            animation: fadeInRight 1.3s ease-out; /* Even columns fade from right */
-        }
-
-        /* Responsive: On medium screens and up (768px+), make columns 50% */
-        @media (min-width: 768px) {
-            .interest-column {
-                flex: 0 0 50%; /* 50% width */
-                max-width: 50%;
-            }
-        }
-
-        /* No top border for specific columns */
-        .no-top {
-            border-top: none;
-        }
-
-        /* Footer Section */
-        #footer {
-            padding: 65px 0 150px;
-            background-color: #ececec;
-            text-align: center;
-            overflow: hidden;
-        }
-
-        /* Custom footer container */
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-
-        #footer h2 {
-            color: black;
-            font-size: 2.2em;
-            letter-spacing: 3px;
-            margin: 10px 0 20px;
-            text-transform: uppercase;
-        }
-
-        #footer p {
-            font-size: 1.3em;
-            letter-spacing: 1px;
-            margin: 30px auto 35px;
-            max-width: 500px;
-            color: grey;
-        }
-
-        #footer ul li {
-            display: inline-block;
-            min-width: 50px;
-            min-height: 75px;
-            margin: 0 30px;
-            padding: 0 30px;
-            position: relative;
-        }
-
-        #footer ul li a i {
-            font-size: 3em;
-        }
-
-        #footer ul li a p {
-            position: absolute;
-            letter-spacing: 1px;
-            left: 0;
-            right: 0;
-            margin: auto;
-            margin-top: 10px;
-            color: inherit;
-        }
-
-        #footer ul li a {
-            color: lightgray;
-        }
-
-        #footer .license a {
-            color: inherit;
-            padding-bottom: 3px;
-            border-bottom: 1px dotted #bdbdbd;
-        }
-
-        #footer ul li a i p:hover {
-            display: block;
-        }
-
-        .display-on {
-            display: block !important;
-        }
-
-        /* Pure CSS Animations (replaces Animate.css) */
-        @keyframes fadeInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes fadeInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    </style>
-</head>
-<body>
-      <!-- Page Wrapper -->
+  </head>
+  <body>
+    <!-- Page Wrapper -->
     <div class="page-wrapper">
 
       <!-- Hero Wrapper -->
@@ -442,7 +32,7 @@ nav.scrolled .logo img {
                 <li><a href="#about">about</a></li>
                 <li><a href="#portfolio">Portofolio</a></li>
                 <li><a href="#why">Why hire me</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#testimonial">Testimonials</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
           </nav>
@@ -456,145 +46,50 @@ nav.scrolled .logo img {
           </div>
         </section>
       </div>
-    <!-- Intro Section -->
-    <section id="introduction">
-        <div class="brand">
-            <h1>Hello, I'm Gino Stoian</h1>
-            <hr>
-            <h5>web developer && designer</h5>
-        </div>
-        <div class="chevron">
-            <div class="scroll">Scroll Down</div>
-        </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about">
-        <h1>Hi there</h1>
-        <span>—</span><span>—</span><span>—</span><span>—</span><span>—</span> <!-- Pure CSS dashes -->
-        <p>I am a 21 years old <span class="web_Span">web developer</span> / <span>designer</span> 
+      <main class="main-content">
+        <section id="about" class="about-section">
+		      <h1>Hi there</h1>
+          <p>
+            I am a 28 years old Student at <span class = "web_Span">Lumoshive Academy</span> as a <span>Frontend Developer</span> 
+            based in Surakarta. I have a strong passion and eager to learn anything
+            web related, mostly developing responsive and user-friendly web applications., and in the near future, Android iOS applications and software .
+		      </p>
+        </section>
+
+        <section id="portofolio" class="about-section">
+		      <h1>Hi there</h1>
+          <p>
+            I am a 21 years old <span class = "web_Span">web developer</span> / <span>designer</span> 
             based in Romania. I have a strong passion for anything
             web related, mostly developing web applications, and in the near future, iOS applications and software .
-        </p>
-    </section>
+		      </p>
+        </section>
 
-    <!-- Interests Section -->
-    <section id="interests">
-        <div class="interests-container">
-            <h1>What I Do</h1>
-        </div>
-        <div class="interests-row">
-            <div class="interest-column no-top">
-                <div class="flaticon">
-                    <!-- SVG for code icon -->
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path d="M14.23 12.004a2.236 2.236 0 0 0 .406-1.504 2.251 2.251 0 0 0-2.25-2.25 2.251 2.251 0 0 0-2.25 2.25c0 .643.28 1.22.717 1.61l-1.916 1.916a.75.75 0 1 0 1.06 1.06l1.916-1.916a2.236 2.236 0 0 0 1.504.406 2.251 2.251 0 0 0 2.25-2.25 2.251 2.251 0 0 0-.717-1.61l1.916-1.916a.75.75 0 1 0-1.06-1.06l-1.916 1.916z"/>
-                    </svg>
-                </div>
-                <h3>Development</h3>
-                <span>—</span><span>—</span> <!-- Pure CSS dashes -->
-                <p>I develop apps with Javascript's <strong>Node.js</strong> and everything that comes with it. I also like playing around with <strong>Angular.js</strong></p>
-                <span>—</span><span>—</span> <!-- Pure CSS dashes -->
-            </div>
-            <div class="interest-column no-top">
-                <div class="flaticon">
-                    <!-- SVG for list icon -->
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/>
-                    </svg>
-                </div>
-                <h3>Design</h3>
-                <span>—</span><span>—</span> <!-- Pure CSS dashes -->
-                <p>When I'm in the mood I also fancy doing some styling, ideally responsive and minimalistic. A handful of my endeavours will be soon available at <span>codepen.io</span></p>
-                <span>—</span><span>—</span> <!-- Pure CSS dashes -->
-            </div>
-        </div>
-        <div class="interests-row">
-            <div class="interest-column">
-                <div class="flaticon">
-                    <!-- SVG for lightbulb icon -->
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7zM9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1z"/>
-                    </svg>
-                </div>
-                <h3>Open Source</h3>
-                <span>—</span><span>—</span> <!-- Pure CSS dashes -->
-                <p>I ❤️ open source and everything about it to its very nature. I have contributed to several open source projects and manage a few of my own.</p>
-                <span>—</span><span>—</span> <!-- Pure CSS dashes -->
-            </div>
-            <div class="interest-column">
-                <div class="flaticon">
-                    <!-- SVG for globe icon -->
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                    </svg>
-                </div>
-                <h3>The World</h3>
-                <span>—</span><span>—</span> <!-- Pure CSS dashes -->
-                <p>Besides coding, designing, watching awesome TV series, spending time learning to be a better programmer, I do my utmost best to change the world.</p>
-                <span>—</span><span>—</span> <!-- Pure CSS dashes -->
-            </div>
-        </div>
-    </section>
+        <section id="why" class="about-section">
+		      <h1>Hi there</h1>
+          <p>
+            I am a 21 years old <span class = "web_Span">web developer</span> / <span>designer</span> 
+            based in Romania. I have a strong passion for anything
+            web related, mostly developing web applications, and in the near future, iOS applications and software .
+		      </p>
+        </section>
 
-    <section id="footer">
-        <div class="footer-container">
-            <!-- SVG for paper plane icon -->
-            <svg class="icon" style="font-size: 2.5em; padding-bottom: 45px;" viewBox="0 0 24 24">
-                <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
-            </svg>
-            <h2>Interested ?</h2>
-            <span>—</span><span>—</span><span>—</span><span>—</span><span>—</span> <!-- Pure CSS dashes -->
-            <p>Whether you have an interesting project or just want to say hi, feel free to drop a line .</p>
-            <ul>
-                <li class="email">
-                                    <a href="mailto:ginostoian@gmail.com">
-                    <!-- SVG for paper plane icon -->
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
-                    </svg>
-                    <p class="display" style="display:none">ginostoian@gmail.com</p>
-                </a>
-            </li>
-            <li class="github">
-                <a href="https://github.com/ginostoian">
-                    <!-- SVG for GitHub icon -->
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                    </svg>
-                    <p class="display" style="display:none">GitHub</p>
-                </a>
-            </li>
-            <li class="twitter">
-                <a href="https://twitter.com/ginostoian">
-                    <!-- SVG for Twitter icon -->
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                    </svg>
-                    <p class="display" style="display:none">Twitter</p>
-                </a>
-            </li>
-            <li class="codepen">
-                <a href="https://codepen.io/ginostoian">
-                    <!-- SVG for CodePen icon -->
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path d="M24 8.182l-.018-.087-.017-.05c-.01-.024-.018-.05-.032-.076-.01-.014-.028-.032-.043-.043l-.121-.117-.165-.155-.164-.156-.117-.118c-.005-.005-.012-.01-.019-.017-.032-.034-.063-.067-.102-.107-.038-.04-.07-.08-.113-.12-.052-.05-.097-.094-.16-.14-.06-.054-.118-.105-.188-.155-.066-.05-.133-.098-.205-.145-.074-.045-.142-.09-.223-.13-.08-.04-.154-.08-.24-.113-.09-.033-.175-.06-.266-.085-.09-.024-.178-.044-.273-.06-.09-.016-.18-.027-.278-.037-.1-.01-.193-.016-.293-.02-.1-.004-.19-.006-.292-.006h-1.036c-.1 0-.193.002-.292.006-.1.004-.193.01-.293.02-.09.013-.178.027-.278.037-.09.025-.175.052-.266.085-.08.033-.154.073-.24.113-.08.04-.142.085-.223.13-.074.047-.133.095-.205.145-.066.05-.118.101-.188.155-.06.046-.097.09-.16.14-.043.04-.075.08-.113.12-.04.04-.07.073-.102.107-.007.007-.014.012-.019.017l-.117.118-.164.156-.165.155-.121.117c-.015.011-.033.029-.043.043-.014.026-.022.052-.032.076-.005.017-.017.03-.017.05l-.018.087c0 .02-.004.04-.004.06v7.636c0 .02.004.04.004.06l.018.087.017.05c.01.024.018.05.032.076.01.014.028.032.043.043l.121.117.165.155.164.156.117.118c.005.005.012.01.019.017.032.034.063.067.102.107.038.04.07.08.113.12.052.05.097.094.16.14.06.054.118.105.188.155.066.05.133.098.205.145.074.045.142.09.223.13.08.04.154.08.24.113.09.033.175.06.266.085.09.024.178.044.273.06.09.016.18.027.278.037.1.01.193.016.293.02.1.004.19.006.292.006h1.036c.1 0 .193-.002.292-.006.1-.004.193-.01.293-.02.09-.013.178-.027.278-.037.09-.025.175-.052.266-.085.08-.033.154-.073.24-.113.08-.04.142-.085.223-.13.074-.047.133-.095.205-.145.066-.05.118-.101.188-.155.06-.046.097-.09.16-.14.043-.04.075-.08.113-.12.04-.04.07-.073.102-.107.007-.007.014-.012.019-.017l.117-.118.164-.156.165-.155.121-.117c.015-.011.033-.029.043-.043.014-.026.022-.052.032-.076.005-.017.017-.03.017-.05l.018-.087c0-.02.004-.04.004-.06V8.182zM10.364 15.364c-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05.05-.1.1-.15.15-.05">
-                    </svg>
-                                <li class="codepen">
-                <a href="https://codepen.io/ginostoian">
-                    <!-- SVG for CodePen icon -->
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                    </svg>
-                    <p class="display" style="display:none">Codepen</p>
-                </a>
-            </li>
-        </ul>
-        <div class="license">
-            2016 © Gino Stoian. Released under <a href="http://www.dbad-license.org"> Don't Be a Dick Public License</a>
-        </div>
+        <section id="testimonial" class="about-section">
+		      <h1>Hi there</h1>
+          <p>
+            I am a 21 years old <span class = "web_Span">web developer</span> / <span>designer</span> 
+            based in Romania. I have a strong passion for anything
+            web related, mostly developing web applications, and in the near future, iOS applications and software .
+		      </p>
+        </section>
+
+        <section id="contact" class="contact-section">
+		      <h2>Interested ?</h2>
+          <p>Whether you have an interesting project or just want to say hi, feel free to drop a line .</p>
+        </section>
+      </main>
     </div>
-</section>
-</div>
-</body>
+  </body>
+  <script src="js/script.js"></script>
 </html>
