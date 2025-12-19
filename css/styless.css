@@ -41,15 +41,21 @@
 /* html & body */
 html {
     scroll-behavior: smooth;
+    scrollbar-gutter: stable;
+    overflow-x: hidden;
 }
 body{
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 /* Navigation Styles */
 nav{
     height: 6rem;
-    width: 100vw;
+    width: 100%;
+    left: 0;
+    right: 0;
+
     /* background-color: #131418;
     box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2); */
     display: flex;
@@ -177,7 +183,6 @@ nav.scrolled .logo img {
 	left: 0;
 	bottom: 0;
 	right: 0;
-	z-index: 999;
 }
 
 .hero-content h1 {
@@ -283,7 +288,13 @@ hr {
 	border: 0;
 }
 
+<<<<<<< HEAD
 /* contact section */
+=======
+/* contact */
+/* Footer Section */
+
+>>>>>>> origin/dev
 .contact-section {
 	padding: 65px 0 150px;
 	background-color: #ececec;
@@ -307,8 +318,12 @@ hr {
 	color: grey;
 }
 
+<<<<<<< HEAD
 /* Footer */
 #footer ul li {
+=======
+.contact-section ul li {
+>>>>>>> origin/dev
 	display: inline-block;
 	min-width: 50px;
 	min-height: 75px;
@@ -317,11 +332,19 @@ hr {
 	position: relative;
 }
 
+<<<<<<< HEAD
 #footer ul li a i {
 	font-size: 3em;
 }
 
 #footer ul li a p {
+=======
+.contact-section ul li a i {
+	font-size: 3em;
+}
+
+.contact-section ul li a p {
+>>>>>>> origin/dev
 	position: absolute;
 	letter-spacing: 1px;
 	left: 0;
@@ -331,17 +354,29 @@ hr {
 	color: inherit;
 }
 
+<<<<<<< HEAD
 #footer ul li a {
 	color: lightgray;
 }
 
 #footer .license a {
+=======
+.contact-section ul li a {
+	color: lightgray;
+}
+
+.contact-section .license a {
+>>>>>>> origin/dev
 	color: inherit;
 	padding-bottom: 3px;
 	border-bottom: 1px dotted #bdbdbd;
 }
 
+<<<<<<< HEAD
 #footer ul li a i p:hover {
+=======
+.contact-section ul li a i p:hover {
+>>>>>>> origin/dev
 	display: block;
 }
 
@@ -364,6 +399,9 @@ hr {
         transform: translate(-5%, -50%);
         z-index: 2;
         transition: all 0.7s ease;
+    }
+    .nav-links li a {
+        color: var(--light) !important;
     }
     .nav-links{
         position: fixed;
