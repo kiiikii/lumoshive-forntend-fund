@@ -41,15 +41,21 @@
 /* html & body */
 html {
     scroll-behavior: smooth;
+    scrollbar-gutter: stable;
+    overflow-x: hidden;
 }
 body{
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 /* Navigation Styles */
 nav{
     height: 6rem;
-    width: 100vw;
+    width: 100%;
+    left: 0;
+    right: 0;
+
     /* background-color: #131418;
     box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2); */
     display: flex;
@@ -175,7 +181,6 @@ nav.scrolled .logo img {
 	left: 0;
 	bottom: 0;
 	right: 0;
-	z-index: 999;
 }
 
 .hero-content h1 {
@@ -281,6 +286,73 @@ hr {
 	border: 0;
 }
 
+/* contact */
+/* Footer Section */
+
+.contact-section {
+	padding: 65px 0 150px;
+	background-color: #ececec;
+	text-align: center;
+	overflow: hidden;
+}
+
+.contact-section h2 {
+	color: black;
+	font-size: 2.2em;
+	letter-spacing: 3px;
+	margin: 10px 0 20px;
+	text-transform: uppercase;
+}
+
+.contact-section p {
+	font-size: 1.3em;
+	letter-spacing: 1px;
+	margin: 30px auto 35px;
+	max-width: 500px;
+	color: grey;
+}
+
+.contact-section ul li {
+	display: inline-block;
+	min-width: 50px;
+	min-height: 75px;
+	margin: 0 30px;
+	padding: 0 30px;
+	position: relative;
+}
+
+.contact-section ul li a i {
+	font-size: 3em;
+}
+
+.contact-section ul li a p {
+	position: absolute;
+	letter-spacing: 1px;
+	left: 0;
+	right: 0;
+	margin: auto;
+	margin-top: 10px;
+	color: inherit;
+}
+
+.contact-section ul li a {
+	color: lightgray;
+}
+
+.contact-section .license a {
+	color: inherit;
+	padding-bottom: 3px;
+	border-bottom: 1px dotted #bdbdbd;
+}
+
+.contact-section ul li a i p:hover {
+	display: block;
+}
+
+.display-on {
+	display: block !important;
+}
+
 /*Stying for small screens*/
 @media screen and (max-width: 800px){
     nav{
@@ -296,6 +368,9 @@ hr {
         transform: translate(-5%, -50%);
         z-index: 2;
         transition: all 0.7s ease;
+    }
+    .nav-links li a {
+        color: var(--light) !important;
     }
     .nav-links{
         position: fixed;
