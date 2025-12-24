@@ -1,6 +1,7 @@
 const hamburger = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".nav-links");
 const links = document.querySelectorAll(".nav-links li");
+const nava = document.querySelectorAll(".nav-links li a");
 const nav = document.querySelector("nav");
 
 hamburger.addEventListener('click', ()=>{
@@ -12,6 +13,19 @@ hamburger.addEventListener('click', ()=>{
 
     //Hamburger Animation
     hamburger.classList.toggle("toggle");
+});
+
+nava.forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove("open");
+        hamburger.classList.remove("toggle");
+
+        document.body.classList.remove("menu-open");
+        
+        links.forEach(link => {
+            link.classList.toggle("fade");
+        });
+    });
 });
 
 // Scroll effect sederhana untuk navbar

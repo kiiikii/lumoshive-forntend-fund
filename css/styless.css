@@ -44,6 +44,7 @@ html {
     scrollbar-gutter: stable;
     overflow-x: hidden;
 }
+
 body{
   line-height: 1.6;
   overflow-x: hidden;
@@ -69,7 +70,6 @@ nav{
 nav.scrolled {
     background-color: rgba(255, 252, 242, 0.97); /* Sedikit transparan untuk efek glass */
     box-shadow: var(--shadow-md);
-    height: 5rem;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -87,7 +87,7 @@ nav.scrolled .nav-links li a:hover {
 }
 
 nav.scrolled .hamburger div {
-    background-color: var(--dark);
+    color: var(--light);
     transition: background-color 0.4s ease-out;
 }
 
@@ -146,7 +146,7 @@ nav.scrolled .logo img {
 .hamburger div{
     width: 30px;
     height:3px;
-    background: #f2f5f7;
+    background: var(--dark);
     margin: 5px;
     transition: all 0.3s ease;
 }
@@ -234,9 +234,14 @@ hr {
 
 /* about */
 .about-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;        
+    align-items: center;
 	padding: 100px 0 140px;
-	font-family: "Roboto Mono";
-	background-color: whitesmoke;
+	font-family: var(--font-heading);
+	background-color: #ececec;
 	text-align: center;
 	overflow: hidden;
 }
@@ -288,14 +293,165 @@ hr {
 	border: 0;
 }
 
-<<<<<<< HEAD
-/* contact section */
-=======
-/* contact */
-/* Footer Section */
+/* testimonial */
+.testimonial-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;        
+    align-items: center;
+	padding: 100px 0 140px;
+	font-family: var(--font-heading);
+    font-size: 20px;
+	background-color: whitesmoke;
+	text-align: center;
+	overflow: hidden;
+}
 
->>>>>>> origin/dev
+.testi-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 16px;
+  object-fit: cover;
+}
+
+.testi-slider-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.testi-slider {
+   display: block;
+   width: 100%;
+   height: auto;
+   margin-top: 100px;
+}
+
+.testi-slider ul.slider {
+   display: block;
+   list-style: none;
+   padding: 0;
+   position: relative;
+   display: inline-block;
+   width: 100%;
+   height: 350px;
+   overflow: hidden;
+   margin: 0 auto;
+}
+
+.testi-slider ul.slider li {
+    position: absolute;
+    display: block;
+    width: 100%;
+    opacity: 0;
+    margin: 0 auto;
+}
+
+.testi-slider q {
+   display: inline-block;
+   font-size: 20px;
+   letter-spacing: .5pt;
+   text-shadow: 0 5px 10px rgba(0,0,0,.1);
+   max-width: 80ch;
+   margin-bottom: 15px;
+}
+
+.testi-slider ul.slider li:nth-child(1) {
+    opacity: 1;
+
+    -webkit-animation: fade-animation-1 25s infinite;
+            animation: fade-animation-1 25s infinite;
+}
+.testi-slider ul.slider li:nth-child(2) {
+    -webkit-animation: fade-animation-2 25s infinite;
+            animation: fade-animation-2 25s infinite;
+}
+.testi-slider ul.slider li:nth-child(3) {
+    -webkit-animation: fade-animation-3 25s infinite;
+            animation: fade-animation-3 25s infinite;
+}
+.testi-slider ul.slider li:nth-child(4) {
+    -webkit-animation: fade-animation-4 25s infinite;
+            animation: fade-animation-4 25s infinite;
+}
+
+@keyframes fade-animation-1 {
+    0%, 25%, 100% {
+        opacity:0
+    }
+    3%, 22% {
+        opacity: 1;
+    }
+}
+@keyframes fade-animation-2 {
+    0%, 25%, 50%, 100% {
+        opacity:0
+    }
+    28%, 47% {
+        opacity: 1;
+    }
+}
+@keyframes fade-animation-3 {
+    0%, 50%, 75%, 100% {
+        opacity:0
+    }
+    53%, 72% {
+        opacity: 1;
+    }
+}
+@keyframes fade-animation-4 {
+    0%, 75%, 100% {
+        opacity:0
+    }
+    78%, 97% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fade-animation-1 {
+    0%, 25%, 100% {
+        opacity:0
+    }
+    3%, 22% {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes fade-animation-2 {
+    0%, 25%, 50%, 100% {
+        opacity:0
+    }
+    28%, 47% {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes fade-animation-3 {
+    0%, 50%, 75%, 100% {
+        opacity:0
+    }
+    53%, 72% {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes fade-animation-4 {
+    0%, 75%, 100% {
+        opacity:0
+    }
+    78%, 97% {
+        opacity: 1;
+    }
+}
+
+
+/* contact section */
 .contact-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;        
+    align-items: center;
 	padding: 65px 0 150px;
 	background-color: #ececec;
 	text-align: center;
@@ -318,12 +474,8 @@ hr {
 	color: grey;
 }
 
-<<<<<<< HEAD
 /* Footer */
-#footer ul li {
-=======
 .contact-section ul li {
->>>>>>> origin/dev
 	display: inline-block;
 	min-width: 50px;
 	min-height: 75px;
@@ -332,19 +484,11 @@ hr {
 	position: relative;
 }
 
-<<<<<<< HEAD
-#footer ul li a i {
-	font-size: 3em;
-}
-
-#footer ul li a p {
-=======
 .contact-section ul li a i {
 	font-size: 3em;
 }
 
 .contact-section ul li a p {
->>>>>>> origin/dev
 	position: absolute;
 	letter-spacing: 1px;
 	left: 0;
@@ -354,29 +498,17 @@ hr {
 	color: inherit;
 }
 
-<<<<<<< HEAD
-#footer ul li a {
-	color: lightgray;
-}
-
-#footer .license a {
-=======
 .contact-section ul li a {
 	color: lightgray;
 }
 
 .contact-section .license a {
->>>>>>> origin/dev
 	color: inherit;
 	padding-bottom: 3px;
 	border-bottom: 1px dotted #bdbdbd;
 }
 
-<<<<<<< HEAD
-#footer ul li a i p:hover {
-=======
 .contact-section ul li a i p:hover {
->>>>>>> origin/dev
 	display: block;
 }
 
@@ -390,6 +522,13 @@ hr {
         position: fixed;
         z-index: 3;
     }
+    .hamburger div{
+        background: var(--light);
+    }
+
+    nav.scrolled .hamburger div{
+        background: var(--dark);
+    }
     .hamburger{
         display:block;
         position: absolute;
@@ -397,7 +536,7 @@ hr {
         right: 5%;
         top: 50%;
         transform: translate(-5%, -50%);
-        z-index: 2;
+        z-index: 1001;
         transition: all 0.7s ease;
     }
     .nav-links li a {
@@ -405,18 +544,37 @@ hr {
     }
     .nav-links{
         position: fixed;
+        inset: 0; /* top:0 right:0 bottom:0 left:0 */
+        width: 100%;
+        height: 100svh; /* better than 100vh on mobile */
         background: #131418;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        gap: 2rem;
+
+        transform: translateY(-100%);
+        transition: transform 0.6s ease;
+        z-index: 1000;
+        pointer-events: none;
+        /* position: fixed;
+        background: #131418;
+        inset: 0;
         height: 100vh;
         width: 100%;
         flex-direction: column;
         clip-path: circle(50px at 90% -20%);
         -webkit-clip-path: circle(50px at 90% -10%);
         transition: all 1s ease-out;
-        pointer-events: none;
+        pointer-events: none; */
     }
     .nav-links.open{
-        clip-path: circle(1000px at 90% -10%);
-        -webkit-clip-path: circle(1000px at 90% -10%);
+        transform: translateY(0);
+        /* clip-path: circle(1000px at 90% -10%);
+        -webkit-clip-path: circle(1000px at 90% -10%); */
         pointer-events: all;
     }
     .nav-links li{
@@ -444,6 +602,30 @@ hr {
     li.fade{
         opacity: 1;
     }
+
+    .testi-slider q {
+        font-size: 18px;
+        
+    }
+    .contact-section ul li {
+        min-width: auto;
+        min-height: auto;
+        margin: 0 12px;
+        padding: 0;
+    }
+
+    .contact-section ul li a i {
+        font-size: 2.2em;
+    }
+
+    .contact-section ul li a p {
+        font-size: 0.85em;
+        margin-top: 6px;
+    }
+    .contact-section p {
+        letter-spacing: 0.5px;
+    }
+
 }
 /*Animating Hamburger Icon on Click*/
 .toggle .line1{
